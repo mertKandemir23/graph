@@ -1,0 +1,65 @@
+scalar Long
+scalar Int
+
+type Vehicle {
+    id: ID!,
+    year: Int,
+    brand: String,
+    brandId: Long,
+    model: String,
+    modelId: Long,
+    bodyType: String,
+    bodyTypeId: Long,
+    transmissionType: String,
+    transmissionTypeId: Long,
+    fuelType: String,
+    fuelTypeId: Long,
+    version: String,
+    versionId: Long
+    km: Int,
+    version: String,
+    createdAt: String,
+    apiUser: String,
+    companyId: Long,
+    retailPrice: Int,
+    quickSellPrice: Int,
+    aboveMarketPrice: Int,
+    galleryPriceUp: Int,
+    galleryPriceDown: Int,
+    clientIp: String,
+    duration: Long,
+    statusCode: Int,
+    statusDesc: String,
+    pricingDate: String,
+    color: String,
+    city: String,
+    userType: String,
+    userId: Long,
+    source: String
+}
+
+input VehicleDto {
+    year: Int,
+    brand: String,
+    model: String,
+    bodyType: String,
+    transmissionType: String,
+    fuelType: String,
+    version: String,
+    km: Int,
+    apiUser: String,
+    color: String,
+    city: String,
+    userType: String,
+
+}
+
+type Query {
+    getVehicles(brand: String):[Vehicle]
+    getById(id: ID):Vehicle
+
+}
+
+type Mutation {
+    createVehicle(vehicle: VehicleDto):Vehicle
+}
